@@ -53,18 +53,20 @@ services:
       - ./mysql/my.cnf:/etc/mysql/my.cnf
     networks:
       - app-network
- 
+
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:fpm-alpine
+    ports:
+      - "8080:80"
     environment:
-      PMA_HOST: mariadb
+      PMA_HOST: mysql
     volumes:
       - phpmyadmin_data:/var/www/html/
     networks:
       - app-network
     depends_on:
       - db
- 
+
 #Docker Networks
 networks:
   app-network:
