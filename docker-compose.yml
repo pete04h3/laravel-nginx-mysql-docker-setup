@@ -62,9 +62,9 @@ services:
    #Environment variable settings for phpmyadmin. Please refer to and describe the MySQL settings. PMA_The db of services is specified for HOSTS.
     environment:
       - PMA_ARBITRARY=1
-      - PMA_HOSTS=db
+      - PMA_HOSTS=localhost
       - PMA_USER=root
-      - PMA_PASSWORD=replace_mysql_root_password
+      - PMA_PASSWORD=root
     ports:
       - "8080:80"
     volumes:
