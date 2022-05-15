@@ -53,7 +53,7 @@ services:
       - ./mysql/my.cnf:/etc/mysql/my.cnf
     networks:
       - app-network
-<<<<<<< HEAD
+
   #The settings of phpmyadmin are described in the writing.
   phpmyadmin:
    #The container name is decided.
@@ -70,10 +70,6 @@ services:
       - "8080:80"
     volumes:
       - phpmyadmindata:/var/lib/phpmyadmin/
- 
-=======
-
->>>>>>> 4ccefccfb5b8b50a3934b5a78b789f288b68634a
 #Docker Networks
 networks:
   app-network:
