@@ -37,8 +37,8 @@ services:
 
   #MySQL Service
   db:
-#    image: mysql:5.7.32
-    image: mariadb:10.4.8-bionic
+    image: mysql:5.7.32
+#    image: mariadb:10.4.8-bionic
     container_name: db
     restart: unless-stopped
     tty: true
@@ -56,9 +56,9 @@ services:
       - app-network
 
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin:fpm-alpine
+    image: phpmyadmin/phpmyadmin:latest
     ports:
-      - "8080:80"
+      - "8081:80"
     environment:
       - PMA_ARBITRARY=1
 #      - PMA_HOSTS=db
