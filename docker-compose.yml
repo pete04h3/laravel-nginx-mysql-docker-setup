@@ -53,6 +53,22 @@ services:
       - ./mysql/my.cnf:/etc/mysql/my.cnf
     networks:
       - app-network
+  #The settings of phpmyadmin are described in the writing.
+  phpmyadmin:
+   #The container name is decided.
+    container_name: phpmyadmin
+   #It is a setting that pulls the image of phpmyadmin from Docker Hub.
+    image: phpmyadmin/phpmyadmin
+   #Environment variable settings for phpmyadmin. Please refer to and describe the MySQL settings. PMA_The db of services is specified for HOSTS.
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOSTS=db
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+    ports:
+      - "8080:80"
+    volumes:
+      - phpmyadmindata:/var/lib/phpmyadmin/
  
 #Docker Networks
 networks:
@@ -61,4 +77,5 @@ networks:
 #Volumes
 volumes:
   dbdata:
+  phpmyadmindata:
     driver: local
