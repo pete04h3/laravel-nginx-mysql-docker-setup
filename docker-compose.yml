@@ -60,7 +60,11 @@ services:
     ports:
       - "8080:80"
     environment:
-      PMA_HOST: db
+      - PMA_ARBITRARY=1
+#      - PMA_HOSTS=db
+      - PMA_HOSTS=localhost
+      - PMA_USER=root
+      - PMA_PASSWORD=root
     volumes:
       - phpmyadmin_data:/var/www/html/
     networks:
